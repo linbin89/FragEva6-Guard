@@ -54,7 +54,19 @@ This project implements an XDP-based solution to prevent IPv6 fragmentation atta
 	```
 Note: Replace 'ens33' in the script with your network interface name if different.
 
-### Baseline Program
+4. Verify that the XDP program is attached to the interface:
+	```cmd
+	ip link show ens33
+	```
+You should see an `xdp` entry in the output, indicating that the XDP program is successfully attached to the interface. Here's an example of what you might see when running the init script and verifying the XDP attachment:
+
+```c
+ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 xdp qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+link/ether 00:0c:29:b5:72:a1 brd ff:ff:ff:ff:ff:ff
+prog/xdp id 18 tag 5a3d3d1a1e49df52 jited
+```
+
+### baseline (Python Program)
 1. Run the baseline program:
    python3 baseline.py
    
