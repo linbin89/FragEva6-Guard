@@ -68,8 +68,9 @@ prog/xdp id 18 tag 5a3d3d1a1e49df52 jited
 
 ### baseline (Python Program)
 1. Run the baseline program:
-   python3 baseline.py
-   
+	```python
+	python3 baseline.py
+	```
 ## Notes
 
 - The XDP program (FragEva6-Guard) is written in C and compiled using Clang.
